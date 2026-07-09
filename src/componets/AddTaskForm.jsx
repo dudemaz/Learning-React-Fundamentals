@@ -1,11 +1,24 @@
 import Button from "./Button"
 import Field from "./Field"
 
-function AddTuskForm(){
+function AddTuskForm(props){
+  const{ 
+    addTask
+  } = props
+  const onSubmit = (event) =>{
+    event.preventDefault()
+    addTask()
+  }
     return(
-         <form className="todo__form">
-       <Field />
-        <Button/>
+         <form className="todo__form" onSubmit={onSubmit}>
+       <Field 
+        className="todo__field"
+         label="New task title"
+         id="new-task"
+         
+       />
+       
+        <Button type="submit">Add</Button>
       </form>   
     )
 }

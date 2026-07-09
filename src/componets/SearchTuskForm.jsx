@@ -1,21 +1,21 @@
-function SearchTaskForm(){
+import Field from "./Field"
+
+function SearchTaskForm(props){
+    const { onSearchInput } = props
     return( 
-        <form className="todo__form">
-        <div className="todo__field field">
-          <label
-            className="field__label"
-            htmlFor="search-task"
-          >
-            Search task
-          </label>
-          <input
-            className="field__input"
-            id="search-task"
-            placeholder=" "
-            autoComplete="off"
-            type="search"
-          />
-        </div>
+      <form
+       className ={`todo__form`}
+       onSubmit={(e) =>{
+        e.preventDefault()
+       }}
+       >  
+      <Field
+        className="todo__field"
+        label="Search task"
+        id="search-task"
+        type="search"
+        onInput={(event) => onSearchInput(event.target.value)}
+      />
       </form>
     )
 }
