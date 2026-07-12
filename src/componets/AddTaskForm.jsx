@@ -3,7 +3,9 @@ import Field from "./Field"
 
 function AddTuskForm(props){
   const{ 
-    addTask
+    addTask,
+    newTaskTitle,
+    setNewTaskTitle
   } = props
   const onSubmit = (event) =>{
     event.preventDefault()
@@ -15,6 +17,8 @@ function AddTuskForm(props){
         className="todo__field"
          label="New task title"
          id="new-task"
+         value={newTaskTitle}
+         onInput={(event) => setNewTaskTitle(event.target.value)}
          
        />
        

@@ -13,7 +13,7 @@ function TodoItem(props){
             id={id}
             type="checkbox"
             checked={isDone}
-            onChange={(target) => onToggleTask(id, target.checked)}
+            onChange={(event) => onToggleTask(id, event.target.checked)}
           />
           <label
             className="todo-item__label"
